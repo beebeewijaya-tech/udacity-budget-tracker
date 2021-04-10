@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/spacing_normal"
+        android:paddingVertical="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small">
+
+        <TextView
+            android:id="@+id/budget_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/TextTitleSmall"
+            tools:text="Vehicle" />
+
+        <TextView
+            android:id="@+id/budget_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/budget_name"
+            style="@style/TextTitleSmall"
+            tools:text="Expense 100 / 400 $USD" />
+
+        <ProgressBar
+            android:id="@+id/expense_over"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/budget_name"
+            android:progressBackgroundTint="@color/smoke_grey"
+            android:progressTint="@color/yellow"
+            android:layout_marginTop="@dimen/spacing_small"
+            tools:progress="25"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

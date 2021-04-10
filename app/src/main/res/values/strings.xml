@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">My Budget</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="powered_by">Powered by</string>
+    <string name="main_logo">Main Logo</string>
+    <string name="udacity_logo">Udacity logo</string>
+    <string name="welcome_to_app">Welcome to My Budget</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="enter_email_hint">Enter your email address</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="dont_have_account">Don’t have an account ? Click Here</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="already_have_account">Already have an account ? Click here</string>
+    <string name="register_title">Register Your account</string>
+    <string name="expenses">Expenses</string>
+    <string name="budget">Budget</string>
+    <string name="empty_expenses">Empty Expenses</string>
+    <string name="oh_no_it_s_empty">Oh no it\'s empty!</string>
+    <string name="add_some_expenses_record">Add Some Expenses Record</string>
+    <string name="add_budget_empty">Add Some Budget and Track Your Expense</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="add_budget">Add Budget</string>
+    <string name="expense_item_placeholder_title">Beef Steak</string>
+    <string name="expense_item_placeholder_desc">Beef Steak with extra fries</string>
+    <string name="expense_item_budget">Food and Drink</string>
+    <string name="expense_placeholder_price">- $USD 14.00</string>
+    <string name="this_month_budget">This month budget</string>
+    <string name="enter_your_expense_name">Enter your Expense Name</string>
+    <string name="enter_your_expense_description">Enter your Expense Description</string>
+    <string name="enter_budget_amount_in_usd">Enter budget amount in USD</string>
+    <string name="save_expenses">Save Expenses</string>
+    <string name="enter_your_budget_name">Enter your Budget Name</string>
+    <string name="save_budget">Save Budget</string>
+    <string name="logout">Logout</string>
+
+    <string name="notification_channel_id" translatable="false">my_budget_id</string>
+    <string name="notification_channel_name" translatable="true">MyBudget Channel</string>
+    <string name="notification_channel_title" translatable="true">Budget Overspend!!</string>
+</resources>

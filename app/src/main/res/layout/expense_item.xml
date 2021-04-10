@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="expense"
+            type="com.beebee.mybudget.domain.Expense" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/spacing_medium"
+        android:paddingHorizontal="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_small">
+
+        <TextView
+            android:id="@+id/expense_name"
+            android:layout_width="@dimen/expense_title_width"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TextTitleNormal"
+            android:text="@{expense.name}"
+            tools:text="@string/expense_item_placeholder_title" />
+
+        <TextView
+            android:id="@+id/expense_description"
+            android:layout_width="@dimen/expense_title_width"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expense_name"
+            style="@style/TextLight"
+            android:text="@{expense.description}"
+            tools:text="@string/expense_item_placeholder_desc" />
+
+        <TextView
+            android:id="@+id/expense_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expense_description"
+            style="@style/TextLabelBudget"
+            android:text="@{expense.budgetId}"
+            tools:text="@string/expense_item_budget" />
+
+        <TextView
+            android:id="@+id/expense_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/expense_name"
+            style="@style/TextTitleNormal"
+            android:text="@{expense.expense}"
+            android:textColor="@color/red"
+            tools:text="@string/expense_placeholder_price" />
+
+        <TextView
+            android:id="@+id/expense_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/expense_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/TextLight"
+            android:text="@{expense.createdAt}"
+            tools:text="4 June 2021" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

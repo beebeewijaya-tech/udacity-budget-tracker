@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.beebee.mybudget.screens.save_budget.SaveBudgetViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/save_expense_fragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="@dimen/spacing_normal"
+        android:paddingVertical="@dimen/spacing_medium"
+        tools:ignore="ExtraText">
+
+        <EditText
+            android:id="@+id/name_expense_input"
+            style="@style/Input"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:hint="@string/enter_your_budget_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={viewModel.budgetName}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/amount_expense_input"
+            style="@style/Input"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:hint="@string/enter_budget_amount_in_usd"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@={viewModel.budgetAmount}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_expense_input" />
+
+        <Button
+            android:id="@+id/save_budget_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/save_budget"
+            app:layout_constraintTop_toBottomOf="@id/amount_expense_input"
+            android:layout_marginTop="@dimen/spacing_normal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.beebee.mybudget.screens.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_saveExpenseFragment"
+            app:destination="@id/saveExpenseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_saveBudgetFragment"
+            app:destination="@id/saveBudgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveExpenseFragment"
+        android:name="com.beebee.mybudget.screens.save_expense.SaveExpenseFragment"
+        android:label="SaveExpenseFragment" />
+    <fragment
+        android:id="@+id/saveBudgetFragment"
+        android:name="com.beebee.mybudget.screens.save_budget.SaveBudgetFragment"
+        android:label="SaveBudgetFragment" />
+</navigation>
