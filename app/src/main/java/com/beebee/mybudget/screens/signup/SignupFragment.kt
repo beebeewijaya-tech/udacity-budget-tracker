@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -14,9 +13,15 @@ import com.beebee.mybudget.databinding.FragmentSignupBinding
 import com.beebee.mybudget.utils.action
 import com.beebee.mybudget.utils.hideKeyboard
 import com.beebee.mybudget.utils.snack
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignupFragment : Fragment() {
     private lateinit var binding: FragmentSignupBinding
+
+    @Inject
+    lateinit var viewModel: SignupViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +29,6 @@ class SignupFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSignupBinding.inflate(inflater, container, false)
-
-        val viewModel = ViewModelProvider(this).get(SignupViewModel::class.java)
 
         binding.alreadyHaveAccount.setOnClickListener {
             findNavController().popBackStack()

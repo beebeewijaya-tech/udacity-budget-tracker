@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
   compileSdkVersion 30
@@ -62,11 +63,12 @@ dependencies {
   implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
   implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
-  // Worker
+  // Hilt
+  implementation "com.google.dagger:hilt-android:$hilt_version"
+  kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
   // Timber
   implementation 'com.jakewharton.timber:timber:4.7.1'
-
 
   // Live Cycle
   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"

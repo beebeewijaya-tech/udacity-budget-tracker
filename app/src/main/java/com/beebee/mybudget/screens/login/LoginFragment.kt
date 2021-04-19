@@ -17,9 +17,15 @@ import com.beebee.mybudget.utils.action
 import com.beebee.mybudget.utils.hideKeyboard
 import com.beebee.mybudget.utils.snack
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
+
+    @Inject
+    lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +33,6 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-
-        val viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.dontHaveAccount.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignupFragment())

@@ -6,10 +6,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.beebee.mybudget.repository.auth.AuthRepository
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class LoginViewModel(application: Application) : AndroidViewModel(application) {
+@FragmentScoped
+class LoginViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
     private val authRepository = AuthRepository()
 
     val emailText = MutableLiveData<String>()

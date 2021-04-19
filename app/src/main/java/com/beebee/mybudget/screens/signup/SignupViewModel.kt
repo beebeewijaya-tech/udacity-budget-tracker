@@ -8,8 +8,9 @@ import androidx.lifecycle.viewModelScope
 import com.beebee.mybudget.repository.auth.AuthRepository
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class SignupViewModel(application: Application) : AndroidViewModel(application) {
+class SignupViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
     private val authRepository = AuthRepository()
 
     val emailText = MutableLiveData<String>()
