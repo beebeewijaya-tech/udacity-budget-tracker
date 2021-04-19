@@ -6,9 +6,12 @@ import androidx.lifecycle.*
 import com.beebee.mybudget.database.getInstance
 import com.beebee.mybudget.domain.Budget
 import com.beebee.mybudget.repository.budget.BudgetRepository
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SaveBudgetViewModel(
+@FragmentScoped
+class SaveBudgetViewModel @Inject constructor(
     val application: Application,
     val activity: Activity
 ) : ViewModel() {

@@ -13,10 +13,16 @@ import com.beebee.mybudget.databinding.FragmentSaveBudgetBinding
 import com.beebee.mybudget.utils.action
 import com.beebee.mybudget.utils.hideKeyboard
 import com.beebee.mybudget.utils.snack
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SaveBudgetFragment : Fragment() {
     private lateinit var binding: FragmentSaveBudgetBinding
+
+    @Inject
+    lateinit var viewModel: SaveBudgetViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,9 +30,6 @@ class SaveBudgetFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSaveBudgetBinding.inflate(inflater, container, false)
-
-        val viewModelFactory = SaveBudgetViewModel.SaveBudgetViewModelFactory(requireActivity().application, requireActivity())
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(SaveBudgetViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this

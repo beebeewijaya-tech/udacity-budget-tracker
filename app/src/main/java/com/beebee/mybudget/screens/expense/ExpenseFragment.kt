@@ -11,9 +11,15 @@ import androidx.navigation.fragment.findNavController
 import com.beebee.mybudget.R
 import com.beebee.mybudget.databinding.FragmentExpenseBinding
 import com.beebee.mybudget.screens.main.MainFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ExpenseFragment : Fragment() {
     private lateinit var binding: FragmentExpenseBinding
+
+    @Inject
+    lateinit var viewModel: ExpenseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,9 +27,6 @@ class ExpenseFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentExpenseBinding.inflate(inflater, container, false)
-
-        val viewModelFactory = ExpenseViewModel.ExpenseViewModelFactory(requireActivity().application, requireActivity())
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(ExpenseViewModel::class.java)
 
         val adapter = ExpenseAdapter()
         binding.expenseList.adapter = adapter

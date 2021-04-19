@@ -6,10 +6,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.beebee.mybudget.repository.auth.AuthRepository
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+@FragmentScoped
 class SignupViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
     private val authRepository = AuthRepository()
 

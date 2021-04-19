@@ -8,9 +8,12 @@ import com.beebee.mybudget.domain.Budget
 import com.beebee.mybudget.domain.Expense
 import com.beebee.mybudget.repository.budget.BudgetRepository
 import com.beebee.mybudget.repository.expense.ExpenseRepository
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SaveExpenseViewModel(
+@FragmentScoped
+class SaveExpenseViewModel @Inject constructor(
     val application: Application,
     val activity: Activity
 ) : ViewModel() {

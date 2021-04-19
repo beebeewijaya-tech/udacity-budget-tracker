@@ -12,6 +12,7 @@ import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -19,7 +20,9 @@ import com.beebee.mybudget.R
 import com.beebee.mybudget.databinding.ActivityHomeBinding
 import com.beebee.mybudget.screens.splash.SplashActivity
 import com.beebee.mybudget.utils.Token
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -57,12 +60,9 @@ class HomeActivity : AppCompatActivity() {
         )
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        super.onOptionsItemSelected(item)
-        if(item.itemId == android.R.id.home) {
-            drawerLayout.openDrawer(Gravity.LEFT)
-        }
-        return true
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment_container)
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
     private fun createChannel(channelId: String, channelName: String) {

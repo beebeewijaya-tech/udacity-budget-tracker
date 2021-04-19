@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.beebee.mybudget.databinding.FragmentMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     override fun onCreateView(

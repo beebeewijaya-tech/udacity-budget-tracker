@@ -15,8 +15,11 @@ import com.beebee.mybudget.databinding.FragmentSaveExpenseBinding
 import com.beebee.mybudget.utils.action
 import com.beebee.mybudget.utils.hideKeyboard
 import com.beebee.mybudget.utils.snack
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SaveExpenseFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var binding: FragmentSaveExpenseBinding
     private var listBudget: MutableList<String> = mutableListOf()
@@ -24,15 +27,15 @@ class SaveExpenseFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private var selectedBudgetId = ""
     private var selectedBudgetName = ""
 
+    @Inject
+    lateinit var viewModel: SaveExpenseViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSaveExpenseBinding.inflate(inflater, container, false)
-
-        val viewModelFactory = SaveExpenseViewModel.SaveExpenseViewModelFactory(requireActivity().application, requireActivity())
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(SaveExpenseViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this

@@ -9,10 +9,13 @@ import androidx.lifecycle.*
 import com.beebee.mybudget.database.getInstance
 import com.beebee.mybudget.domain.Expense
 import com.beebee.mybudget.repository.expense.ExpenseRepository
+import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class ExpenseViewModel(
+@FragmentScoped
+class ExpenseViewModel @Inject constructor(
     val application: Application,
     val activity: Activity
 ) : ViewModel() {
